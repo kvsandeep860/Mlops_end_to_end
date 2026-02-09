@@ -26,11 +26,11 @@ warnings.filterwarnings("ignore")
 
 # ========================== CONFIGURATION ==========================
 CONFIG = {
-    "data_path": "notebooks/data.csv",
+    "data_path": "data.csv",
     "test_size": 0.2,
-    "mlflow_tracking_uri": "https://dagshub.com/vikashdas770/YT-Capstone-Project.mlflow",
-    "dagshub_repo_owner": "vikashdas770",
-    "dagshub_repo_name": "YT-Capstone-Project",
+    "mlflow_tracking_uri": "https://dagshub.com/kvsandeep860/Mlops_end_to_end.mlflow",
+    "dagshub_repo_owner": "kvsandeep860",
+    "dagshub_repo_name": "Mlops_end_to_end",
     "experiment_name": "Bow vs TfIdf"
 }
 
