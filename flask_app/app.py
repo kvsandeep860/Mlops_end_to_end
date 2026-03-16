@@ -77,24 +77,6 @@ mlflow.set_tracking_uri('https://dagshub.com/kvsandeep860/Mlops_end_to_end.mlflo
 dagshub.init(repo_owner='kvsandeep860', repo_name='Mlops_end_to_end', mlflow=True)
 # -------------------------------------------------------------------------------------
 
-# Below code block is for production use
-# -------------------------------------------------------------------------------------
-# Set up DagsHub credentials for MLflow tracking
-# dagshub_token = os.getenv("CAPSTONE_TEST")
-# if not dagshub_token:
-#     raise EnvironmentError("CAPSTONE_TEST environment variable is not set")
-
-# os.environ["MLFLOW_TRACKING_USERNAME"] = dagshub_token
-# os.environ["MLFLOW_TRACKING_PASSWORD"] = dagshub_token
-
-# dagshub_url = "https://dagshub.com"
-# repo_owner = "vikashdas770"
-# repo_name = "YT-Capstone-Project"
-# # Set up MLflow tracking URI
-# mlflow.set_tracking_uri(f'{dagshub_url}/{repo_owner}/{repo_name}.mlflow')
-# -------------------------------------------------------------------------------------
-
-
 # Initialize Flask app
 app = Flask(__name__)
 
@@ -113,22 +95,6 @@ REQUEST_LATENCY = Histogram(
 PREDICTION_COUNT = Counter(
     "model_prediction_count", "Count of predictions for each class", ["prediction"], registry=registry
 )
-
-# ------------------------------------------------------------------------------------------
-# Model and vectorizer setup
-# model_name = "my_model"
-# def get_latest_model_version(model_name):
-#     client = mlflow.MlflowClient()
-#     latest_version = client.get_latest_versions(model_name, stages=["Production"])
-#     if not latest_version:
-#         latest_version = client.get_latest_versions(model_name, stages=["None"])
-#     return latest_version[0].version if latest_version else None
-
-# # model_version = get_latest_model_version(model_name)
-# model_uri = "runs:/324e025ee30d45c0a643768886e65efb/model"
-# print(f"Fetching model from: {model_uri}")
-# mlflow.artifacts.download_artifacts(model_uri, dst_path="models/cached_model")
-
 
 # Loading the model from S3
 BUCKET_NAME = "amzn-demo-s3-bucket-3"
